@@ -1,26 +1,32 @@
-body {
+.to-do-body {
 	font-family: 'Roboto';
 	background: #70e1f5;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
+#container {
+	width: 95%;
+	margin: 1em auto;
+	background-color: #f7f7f7;
+	box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
 
 h1 {
 	background-color: #2980b9;
 	color: white;
 	margin: 0;
-	padding: 10px 20px;
+	padding: .5em;
 	text-transform: uppercase;
-	font-size: 24px;
+	font-size: 1.5em;
 	font-weight: normal;
 }
 
 .fa-plus {
 	float: right;
+	vertical-align: middle;
+	margin-top: 5px
 }
-
-
 
 ul {
 	list-style: none;
@@ -30,9 +36,14 @@ ul {
 
 li {
 	background-color: #fff;
-	height: 40px;
+	/*height: 40px;*/
 	line-height: 40px;
 	color: #666;
+	vertical-align: middle;
+}
+
+li p {
+	padding-bottom: 5px;
 }
 
 li:nth-child(2n) {
@@ -41,19 +52,15 @@ li:nth-child(2n) {
 
 span {
 	background-color: #e74c3c;
-	height: 40px;
-	width: 0;
 	display: inline-block;
 	margin-right: 20px;
 	text-align: center;
 	color: white;
-	transition: 0.2s linear;
-	opacity: 0;
-}
 
-li:hover span {
-	width: 40px;
-	opacity: 1.0;
+	background-color: #8f8f8f;
+	margin: 6px;
+	width: 30px;
+	height: 75%;
 }
 
 input {
@@ -72,14 +79,28 @@ input:focus {
 	outline: none;
 }
 
-#container {
-	width: 360px;
-	margin: 100px auto;
-	background-color: #f7f7f7;
-	box-shadow: 0 0 3px rgba(0,0,0,0.1);
-}
-
 .completed {
 	color: gray;
 	text-decoration: line-through;
+}
+
+@media (min-width: 767.98px) {
+	#container {
+		width: 500px;
+	}
+	span {
+		background-color: #e74c3c;
+		height: 40px;
+		width: 0;
+		display: inline-block;
+		margin: 0 20px 0 0;
+		text-align: center;
+		color: white;
+		transition: 0.2s linear;
+		opacity: 0;
+	}
+	li:hover span {
+		width: 40px;
+		opacity: 1.0;
+	}
 }
